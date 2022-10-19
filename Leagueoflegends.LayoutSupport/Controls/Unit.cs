@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Leagueoflegends.LayoutSupport
+namespace Leagueoflegends.LayoutSupport.Controls
 {
     public class Unit : RiotView
     {

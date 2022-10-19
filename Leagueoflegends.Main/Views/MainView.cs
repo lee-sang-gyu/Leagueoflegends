@@ -1,4 +1,4 @@
-﻿using Leagueoflegends.LayoutSupport;
+﻿using Leagueoflegends.LayoutSupport.Controls;
 using System.Windows;
 using System.Windows.Controls;
 
