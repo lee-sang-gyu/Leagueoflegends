@@ -5,8 +5,7 @@
 	xmlns:ctrls="clr-namespace:Leagueoflegends.LayoutSupport.Controls;assembly=Leagueoflegends.LayoutSupport"
     xmlns:menus="clr-namespace:Leagueoflegends.Menus.Views;assembly=Leagueoflegends.Menus">
 
-
-    <!--<Style TargetType="{x:Type views:MainView}">
+    <Style TargetType="{x:Type views:MainView}">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="WindowState" Value="Normal"/>
@@ -16,7 +15,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type views:MainView}">
-                    <Border Width="1280" Height="768">
+                    <Border Width="1280" Height="720">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -24,18 +23,25 @@
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="225"/>
                             </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2" Grid.ColumnSpan="2" Source="/Leagueoflegends.Resources;component/Images/bg-main-04.png" Stretch="Fill"/>
+                            <Border Grid.RowSpan="2" Grid.ColumnSpan="2" Background="#DA000000"/>
 
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="PLAY"/>
-                                <menus:MenuBox DataContext="{Binding MenuBoxViewModel}"/>
-                            </StackPanel>
+                            <Border BorderBrush="#553D4143" BorderThickness="0 0 0 1">
+                                <StackPanel Orientation="Horizontal">
+                                    <ctrls:PlayButton Margin="20"/>
+                                    <menus:MainMenu DataContext="{Binding MenuBoxViewModel}"/>
+                                </StackPanel>
+                            </Border>
+                            <!--<Border Grid.RowSpan="2" Grid.Column="1" Background="#FF010A13"/>
+
+                            <Border Grid.Column="1" BorderBrush="#CC3D4143" BorderThickness="0 0 0 1"/>-->
                         </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
+    </Style>
 
 </ResourceDictionary>

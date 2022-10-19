@@ -29,8 +29,7 @@ namespace Leagueoflegends.Menus.ViewModels
             {
                 new MenuBoxModel("HOME"),
                 new MenuBoxModel("TFT"),
-                new MenuBoxModel("CLASH"),
-                new MenuBoxModel("CLASH4444444")
+                new MenuBoxModel("CLASH")
             };
             return source;
         }
