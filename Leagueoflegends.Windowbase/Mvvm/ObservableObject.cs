@@ -1,19 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Leagueoflegends.Windowbase.Riotbase;
+using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace Leagueoflegends.Windowbase.Mvvm
 {
     public class ObservableObject : INotifyPropertyChanged
     {
+        protected UIElement View;
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        internal void InitRegistUI(UIElement _view)
+        {
+            View = _view;
         }
     }
 }

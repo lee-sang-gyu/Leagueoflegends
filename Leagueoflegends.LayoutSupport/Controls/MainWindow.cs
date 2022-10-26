@@ -1,8 +1,9 @@
-﻿using Leagueoflegends.Windowbase.Riotbase;
+﻿using Leagueoflegends.Windowbase;
+using Leagueoflegends.Windowbase.Riotbase;
 
 namespace Leagueoflegends.LayoutSupport.Controls
 {
-    public class MainWindow : RiotWindow
-    {
-    }
+	public class MainWindow : RiotWindow
+	{
+	}
 }

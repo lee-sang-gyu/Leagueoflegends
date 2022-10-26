@@ -1,10 +1,6 @@
 ﻿using Leagueoflegends.Main.ViewModels;
 using Leagueoflegends.Main.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Leagueoflegends
@@ -23,9 +19,15 @@ namespace Leagueoflegends
             while (dialogResult)
             {
                 ShutdownMode = ShutdownMode.OnExplicitShutdown;
-                var main = new MainView();
-                main.DataContext = new MainViewModel();
-                main.ShowDialog();
+                //var main = new MainView();
+                //main.DataContext = new MainViewModel();
+                //main.ShowDialog();
+                //dialogResult = (bool)main.DialogResult;
+                MainView main = new()
+                {
+                    DataContext = new MainViewModel()
+                };
+                _ = main.ShowDialog();
                 dialogResult = (bool)main.DialogResult;
             }
             Environment.Exit(0);

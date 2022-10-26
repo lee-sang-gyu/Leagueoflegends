@@ -1,5 +1,4 @@
-﻿using Leagueoflegends.Menus.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace Leagueoflegends.Menus.Views

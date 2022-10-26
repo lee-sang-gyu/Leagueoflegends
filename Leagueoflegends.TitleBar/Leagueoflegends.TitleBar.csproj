@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FEE5B0BA-1027-411B-9B90-1597F8AF8F1C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Leagueoflegends.Resources</RootNamespace>
-    <AssemblyName>Leagueoflegends.Resources</AssemblyName>
+    <ProjectGuid>{B66B474D-5E58-440A-97DA-B0A15D7E291E}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>Leagueoflegends.TitleBar</RootNamespace>
+    <AssemblyName>Leagueoflegends.TitleBar</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,16 +24,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -55,6 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\TitleBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -73,6 +71,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\TitleBarViewModel.cs" />
+    <Compile Include="Views\TitleBarView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,15 +82,24 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Images\icon-menu-selected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\bg-main-01.png" />
-    <Resource Include="Images\bg-main-02.png" />
-    <Resource Include="Images\bg-main-03.png" />
-    <Resource Include="Images\bg-main-04.png" />
-    <Resource Include="Images\lol-logo-03.png" />
+    <ProjectReference Include="..\Leagueoflegends.Data\Leagueoflegends.Data.csproj">
+      <Project>{3e01f5fb-69ad-415d-8114-5d7e4d3cbb74}</Project>
+      <Name>Leagueoflegends.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Leagueoflegends.LayoutSupport\Leagueoflegends.LayoutSupport.csproj">
+      <Project>{418fbb6a-08e6-4eae-a304-913f232491a6}</Project>
+      <Name>Leagueoflegends.LayoutSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Leagueoflegends.Resources\Leagueoflegends.Resources.csproj">
+      <Project>{fee5b0ba-1027-411b-9b90-1597f8af8f1c}</Project>
+      <Name>Leagueoflegends.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Leagueoflegends.Windowbase\Leagueoflegends.Windowbase.csproj">
+      <Project>{b0e72967-60f7-4796-8940-36d3822131a7}</Project>
+      <Name>Leagueoflegends.Windowbase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

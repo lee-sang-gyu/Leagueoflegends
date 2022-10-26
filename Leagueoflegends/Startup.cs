@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Leagueoflegends
 {
@@ -11,7 +7,8 @@ namespace Leagueoflegends
         [STAThread]
         public static void Main(string[] args)
         {
-            new App().Run();
+            //new App().Run();
+            _ = new App().Run();
         }
     }
 }
